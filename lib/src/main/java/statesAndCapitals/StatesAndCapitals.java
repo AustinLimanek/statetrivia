@@ -11,7 +11,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.FormatStyle;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collector;
@@ -290,12 +295,6 @@ public class StatesAndCapitals
         // Abandon hope, all ye who enter here; if you insist on trying, you should think about using filter(), map(), max(), orElse(), and some abuse of AbstractMap.SimpleEntry
 
         String statesWithLargestDifferenceBetweenHighestElevations = null;
-
-      System.out.println(
-        states.stream().map(s-> s.getNeighboringStates().stream()
-          .map(n->states.stream().filter(k->k.getStateName().equals(n)))).toList()
-
-        );
 
         testResults.put("E4", StatesAndCapitalsCheck.expert4(statesWithLargestDifferenceBetweenHighestElevations));
 
